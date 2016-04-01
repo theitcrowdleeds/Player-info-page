@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="site">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
+
+    </script>
+<script type="text/javascript" src="app.js">
+
+</script>
+    <title></title>
+  </head>
+  <body  >
+    <div ng-controller='PlayerController as player' class="">
+      <div ng-repeat="player in player.products" ng-controller="TabController as tab" class="">
+        <div class="">
+          <button ng-click="tab.setTab(1)">{{ player.name }}</button>
+        </div>
+
+    <div ng-show="tab.isSet(1)" class="panel playerPanel">
+      <h2>{{ player.age }}</h2>
+      <p>
+        {{ player.playerInfo }}
+      </p>
+      <h3>Current Bid: <strong>{{ player.currentBid | currency : '£' }}</strong></h3>
+    </div>
+  </div>
+
+    </div>
+  </body>
+</html>
